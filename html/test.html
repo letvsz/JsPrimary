@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试网页</title>
+    <script src="../js/test.js"></script>
+    <script>
+        function displayDate() {
+            document.getElementById("show_date").innerHTML = Date();
+        }
+
+        function changeTextColor() {
+            var textElement = document.getElementById("text_change");
+            if (textElement.innerHTML.match("我是黑字")) {
+                textElement.style.color = "#ff0000";
+                textElement.innerHTML = "我是红字";
+            } else {
+                textElement.style.color = "#000000";
+                textElement.innerHTML = "我是黑字";
+            }
+        }
+    </script>
+</head>
+
+
+<body>
+<h2>这是我的第一个Javascript程序</h2>
+<p id="show_date">现在几点啦</p>
+<button type="button" onclick="displayDate()">显示日期</button>
+
+<script>
+    document.write("<p>这是用JavaScript输出的段落</p>");
+</script>
+<p>
+    您只能在 HTML 输出流中使用 <strong>document.write</strong>。
+    如果您在文档已加载后使用它（比如在函数中），会覆盖整个文档。
+</p>
+
+<button type="button" onclick="alert('欢迎主人点我')">按钮-alert</button>
+
+<p id="text_change">我是黑字</p>
+<button type="button" onclick="changeTextColor()">改变文字</button>
+
+<script>printHtml("这是通过外部js输出的网页")</script>
+</body>
+</html>
