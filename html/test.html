@@ -6,7 +6,8 @@
     <script src="../js/test.js"></script>
     <script>
         function displayDate() {
-            document.getElementById("show_date").innerHTML = Date();
+            document.getElementById("show_date").innerHTML = String(new Date());
+            console.log("date:" + String(new Date()));
         }
 
         function changeTextColor() {
@@ -39,8 +40,10 @@
 <button type="button" onclick="alert('欢迎主人点我')">按钮-alert</button>
 
 <p id="text_change">我是黑字</p>
-<button type="button" onclick="changeTextColor()">改变文字</button>
+<button type="button" onclick="changeTextColor()" onmouseover="console.log('change text mouse over')" onchange="console.log('change text finish')">改变文字
+</button>
 
 <script>printHtml("这是通过外部js输出的网页")</script>
+<script>printGrammar()</script>
 </body>
 </html>
