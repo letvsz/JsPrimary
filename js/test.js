@@ -11,7 +11,7 @@ function printGrammar() {
     console.log("text constructor:" + text.constructor);
     console.log("text prototype:" + text.prototype);
 
-    var person;
+    var person = null;
     console.log("person:" + person);
     console.log("null == undefined:" + (null == undefined));
     console.log("null === undefined:" + (null === undefined));
@@ -27,3 +27,53 @@ function isArray(myArray) {
 }
 
 // 正则表达式
+function regular() {
+    var str = "Hello, kylingo";
+    console.log("search:" + str.search("kylingo"));
+    console.log("search:" + str.search("kYlingo"));
+    console.log("search:" + str.search(/kYlingo/i));
+    console.log("search:" + str.search(/h/g));
+    console.log("replace:" + str.replace("kYlingo", "tq"));
+    console.log("replace:" + str.replace(/kYlingo/i, "tq"));
+    console.log("test:" + /e/.test(str));
+    console.log("test:" + /z/.test(str));
+    console.log("exec:" + /e/.exec(str));
+    console.log("exec:" + /z/.exec(str));
+    console.log("isTelNum 13645789635:" + isTelNum(13645789635));
+    console.log("isTelNum 12645789635:" + isTelNum(12645789635));
+    console.log("isTelNum 0755-12345678:" + isTelNum("0755-12345678"));
+    console.log("isTelNum 0755-123456:" + isTelNum("0755-123456"));
+    console.log("isDecimal 100.0:" + isDecimal("100.0"));
+    console.log("isDecimal 100:" + isDecimal("100"));
+    console.log("isChinese 您好:" + isChinese("您好"));
+    console.log("isChinese Hello, kylingo:" + isChinese("Hello, kylingo"));
+    console.log("isStudentNum 12345678:" + isStudentNum("12345678"));
+    console.log("isStudentNum 123456789:" + isStudentNum("123456789"));
+    console.log("isEmail test@163.com:" + isEmail("test@163.com"));
+    console.log("isEmail test@163@com:" + isEmail("test@163@com"));
+}
+
+function isTelNum(num) {
+    var reg = /^((0\d{2,3}-\d{7,8})|(1[34578]\d{9}))$/;
+    return reg.test(num);
+}
+
+function isDecimal(num) {
+    var reg = /^(\d+\.\d+)$/;
+    return reg.test(num)
+}
+
+function isChinese(str) {
+    var reg = /^[\u4E00-\u9FA5]{2,4}$/;
+    return reg.test(str);
+}
+
+function isStudentNum(num) {
+    var reg = /^[0-9]{8}$/
+    return reg.test(num)
+}
+
+function isEmail(str) {
+    var reg = /^([0-9a-zA-Z_-])+@([0-9a-zA-Z_-])+\.([0-9a-zA-Z_-]+)$/;
+    return reg.test(str);
+}
