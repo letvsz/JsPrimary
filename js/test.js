@@ -69,11 +69,43 @@ function isChinese(str) {
 }
 
 function isStudentNum(num) {
-    var reg = /^[0-9]{8}$/
+    var reg = /^[0-9]{8}$/;
     return reg.test(num)
 }
 
 function isEmail(str) {
     var reg = /^([0-9a-zA-Z_-])+@([0-9a-zA-Z_-])+\.([0-9a-zA-Z_-]+)$/;
     return reg.test(str);
+}
+
+function testException() {
+    // try {
+    //     alerts("Hello, world!");
+    // } catch (err) {
+    //     txt = "本页有一个错误。\n\n";
+    //     txt += "错误描述：" + err.message + "\n\n";
+    //     txt += "点击确定继续。\n\n";
+    //     alert(txt);
+    // }
+}
+
+// 调试
+// 使用console.log或者浏览器调试
+
+
+function testStrict() {
+    // "use strict";
+    x = 3.14;
+    console.log("testStrict x:" + x);
+}
+
+function checkInput() {
+    var doc = document.getElementById('id_check');
+    doc.setCustomValidity("您的输入有误");
+    if (!doc.checkValidity()) {
+        document.getElementById('id_check_result').innerHTML = doc.validationMessage;
+    } else {
+        document.getElementById('id_check_result').innerHTML = "";
+    }
+
 }

@@ -40,11 +40,25 @@
 <button type="button" onclick="alert('欢迎主人点我')">按钮-alert</button>
 
 <p id="text_change">我是黑字</p>
-<button type="button" onclick="changeTextColor()" onmouseover="console.log('change text mouse over')" onchange="console.log('change text finish')">改变文字
+<button type="button" onclick="changeTextColor()" onmouseover="console.log('change text mouse over')"
+        onchange="console.log('change text finish')">改变文字
 </button>
 
 <script>printHtml("这是通过外部js输出的网页")</script>
 <script>printGrammar()</script>
 <script>regular()</script>
+<script>testException()</script>
+<script>testStrict()</script>
+
+<p>表单</p>
+<form action="test.php" method="post">
+    <input type="text" name="fname" required/>
+    <input type="submit" value="提交"/>
+</form>
+
+<p>Check</p>
+<input id="id_check" type="number" min="1" max="1000" required>
+<button type="button" onclick="checkInput()">提交</button>
+<p id="id_check_result"></p>
 </body>
 </html>
