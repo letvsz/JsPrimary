@@ -107,5 +107,22 @@ function checkInput() {
     } else {
         document.getElementById('id_check_result').innerHTML = "";
     }
-
 }
+
+function parseJson() {
+    var json = '{"city":"shenzhen", "year":"2017"}';
+    var obj = JSON.parse(json);
+    console.log("parseJson city:" + obj.city + " year:" + obj.year + " other:" + obj.other);
+
+    var str = JSON.stringify(obj);
+    console.log("parseJson str:" + str);
+}
+
+var add = (function () {
+    var count = 0;
+    return function () {
+        count += 1;
+        console.log("add count:" + count);
+        return count;
+    }
+})();
