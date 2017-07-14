@@ -51,7 +51,7 @@
 <script>testStrict()</script>
 
 <p>表单</p>
-<form action="test.php" method="post">
+<form action="test.php" method="post" id="id_form">
     <input type="text" name="fname" required/>
     <input type="submit" value="提交"/>
 </form>
@@ -65,4 +65,17 @@
 <a href="javascript:void(0)">点我，我是空链接</a>
 <script>add()</script>
 <script>add()</script>
+
+<h2>DOM</h2>
+<p id="id_dom" class="class_dom">通过id查找dom</p>
+<script>testDom()</script>
+<p id="id_css">黑色的字</p>
+<button type="button" onclick="testCss()">通过css改变字的颜色</button>
+<button type="button" id="button_css">动态添加EventListener</button>
+<script>addListener()</script>
+
+<div id="div1">
+    <p id="p1">通过DOM动态添加HTML元素</p>
+    <button type="button" onclick="addElement()">点我添加元素</button>
+</div>
 </html>

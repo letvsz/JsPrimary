@@ -126,3 +126,37 @@ var add = (function () {
         return count;
     }
 })();
+
+function testDom() {
+    var id_dom = document.getElementById("id_dom");
+    console.log("id_dom:" + id_dom.innerHTML);
+
+    var class_dom = document.getElementsByClassName("class_dom");
+    console.log("class_dom:" + class_dom[0].innerHTML);
+
+    var id_form = document.getElementById("id_form");
+    var id_tag = id_form.getElementsByTagName("input");
+    console.log("id_tag:" + id_tag[0])
+}
+
+function testCss() {
+    var id_css = document.getElementById("id_css");
+    id_css.style.color = "blue";
+    id_css.style.fontFamily = "Arial";
+    id_css.style.fontSize = "larger";
+    id_css.innerHTML = "蓝色超大字"
+}
+
+function addListener() {
+    document.getElementById("button_css").addEventListener("click", testCss);
+}
+
+function addElement() {
+    var para = document.createElement("p");
+    var node = document.createTextNode("这是动态添加的段落文字");
+    para.appendChild(node);
+
+    var div = document.getElementById("div1");
+    div.appendChild(para);
+}
+
