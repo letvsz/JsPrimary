@@ -160,3 +160,49 @@ function addElement() {
     div.appendChild(para);
 }
 
+function Bike(type, price) {
+    this.type = type;
+    this.price = price;
+
+    // Create function 1
+    Bike.prototype.getPrice = function () {
+        console.log("bike type:" + this.type + " price:" + this.price);
+    }
+}
+
+// Create function 2
+Bike.prototype.run = function () {
+    console.log("bike type:" + this.type + " run");
+};
+
+function testObject() {
+    var bike = new Bike("美利达", 1000);
+    bike.run();
+    bike.getPrice();
+}
+
+function testNumber() {
+    var x = 0123;   // 8进制
+    var y = 0x123;  // 16进制
+    var z = 1000;   // 10进制
+
+    console.log("x:" + x + " y:" + y);
+    console.log("z 2:" + z.toString(2));
+    console.log("z 8:" + z.toString(8));
+    console.log("z 16:" + z.toString(16));
+
+    var num = 2;
+    var str = "hello";
+    while (Infinity !== num) {
+        num *= 2;
+    }
+    console.log("num Infinity:" + num);
+    console.log(("isNaN num:" + isNaN(num)));
+    console.log(("isNaN str:" + isNaN(str)));
+    console.log(("typeof num:" + typeof (num)));
+    console.log(("typeof str:" + typeof (str)));
+}
+
+function testRegExp() {
+
+}
