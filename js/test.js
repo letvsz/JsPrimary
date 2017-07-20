@@ -203,6 +203,43 @@ function testNumber() {
     console.log(("typeof str:" + typeof (str)));
 }
 
-function testRegExp() {
+function testWindowWidth() {
+    var windowWidth = window.innerWidth;
+    var windowHeight = window.innerHeight;
 
+    document.getElementById("window_bom").innerHTML =
+        "浏览器属性 宽:" + windowWidth + " 高:" + windowHeight + "\r\n" +
+        ", 可用宽度:" + screen.availWidth + " 可用高度:" + screen.availHeight +
+        ", location:" + location.href + " pathname:" + location.pathname;
 }
+
+function testInterval() {
+    // 调用clearInterval时，需要将interval设置为全局变量
+    var interval = setInterval(updateTime, 1000);
+}
+
+function updateTime() {
+    var element = document.getElementById("id_time");
+    var date = new Date();
+    var hour = checkTime(date.getHours());
+    var minute = checkTime(date.getMinutes());
+    var second = checkTime(date.getSeconds());
+    element.innerHTML = hour + ":" + minute + ":" + second;
+}
+
+function checkTime(time) {
+    if (time < 10) {
+        time = "0" + time;
+    }
+    return time;
+}
+
+function testTimeout() {
+    setTimeout(doTimeout, 3000);
+}
+
+function doTimeout() {
+    window.open("http://www.baidu.com");
+}
+
+// Cookie

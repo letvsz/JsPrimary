@@ -51,7 +51,7 @@
 <script>testStrict()</script>
 
 <p>表单</p>
-<form action="test.php" method="post" id="id_form">
+<form action="" method="post" id="id_form">
     <input type="text" name="fname" required/>
     <input type="submit" value="提交"/>
 </form>
@@ -82,4 +82,23 @@
 <h2>Object</h2>
 <script>testObject()</script>
 <script>testNumber()</script>
+
+<h2>BOM</h2>
+<p id="window_bom"></p>
+<script>testWindowWidth()</script>
+<a href="http://www.baidu.com" target="_blank">A标签打开新窗口</a>
+<p></p>
+<button onclick="window.open('http://www.baidu.com')">Window打开新窗口</button>
+<button onclick="window.history.back()">back</button>
+<button onclick="window.history.forward()">forward</button>
+
+<h2>弹窗</h2>
+<input type="button" onclick="alert('警告一次')" value="警告">
+<input type="button" onclick="confirm('请确认')" value="确认">
+<input type="button" onclick="prompt('温馨提示','Please input your name')" value="提示">
+
+<h2>计时器</h2>
+<p id="id_time"></p>
+<script>testInterval()</script>
+<button onclick="testTimeout()">3秒后跳转</button>
 </html>
